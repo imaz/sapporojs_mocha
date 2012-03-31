@@ -20,4 +20,22 @@ describe('Array',function(){
       expect(actual).to.be('a\nb');
     });
   })
+  describe('#pop()',function(){
+    it('最後の要素を削除すること',function(){
+      var a = ['a','b'];
+      a.pop();
+      expect(a).to.eql(['a']);
+    });
+    it('最後の要素を返すこと',function(){
+      var a = ['a','b'];
+      var actual = a.pop();
+      expect(actual).to.eql('b');
+    });
+    it('配列が空の場合、`undefined`を返すこと',function(){
+      var a = [];
+      var actual = a.pop();
+      expect(actual).to.eql(undefined); //一度stringに直して評価するからクールじゃない！
+      expect(actual).to.be.an('undefined'); //anはtypeofで評価する これはクール！
+    });
+  });
 });  
