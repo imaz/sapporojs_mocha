@@ -8,4 +8,16 @@ describe('Array',function(){
       expect(actual).to.eql(['a','b','c','x','y','z',true]);
     });
   });
+  describe('#join()',function(){
+    it('引数を省略すると、","で連結されること',function(){
+      var a = ['a','b'];
+      var actual = a.join();
+      expect(actual).to.be('a,b');
+    });
+    it('引数に"\\n"を与えると"\\n"で連結されること',function(){
+      var a = ['a','b'];
+      var actual = a.join('\n');
+      expect(actual).to.be('a\nb');
+    });
+  })
 });  
