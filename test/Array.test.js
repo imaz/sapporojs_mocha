@@ -50,4 +50,24 @@ describe('Array',function(){
       expect(a).to.eql(['p','o','t']);
     });
   });
+  describe('#shift()', function(){
+    it('先頭の要素を削除すること', function(){
+      var a = ['i','P','a','d'];
+      a.shift();
+      expect(a).to.eql(['P','a','d']);
+    });
+    it('先頭の要素を返すこと', function(){
+      var a = ['i','P','a','d'];
+      var actual = a.shift();
+      expect(actual).to.be('i');
+    });
+    it('配列が空の場合、`undefined`を返すこと', function(){
+      var a = [];
+      var actual = a.shift();
+      var undefined = 'bug'; //bug code!!
+      //expect(actual).to.be(undefined); //===での比較 bug code があるとしぬ
+      //expect(actual).to.eql(undefined); //==での比較 一度文字列に置き換えているのであんくーる
+      expect(actual).to.be.an('undefined'); //typeof 'undefined' するのでクール！
+    });
+  });
 });  
