@@ -19,7 +19,7 @@ describe('Array',function(){
       var actual = a.join('\n');
       expect(actual).to.be('a\nb');
     });
-  })
+  });
   describe('#pop()',function(){
     it('最後の要素を削除すること',function(){
       var a = ['a','b'];
@@ -36,6 +36,18 @@ describe('Array',function(){
       var actual = a.pop();
       expect(actual).to.eql(undefined); //一度stringに直して評価するからクールじゃない！
       expect(actual).to.be.an('undefined'); //anはtypeofで評価する これはクール！
+    });
+  });
+  describe('#reverse()', function(){
+    it('要素を逆の順番に入れ替えること', function(){
+      var a = ['t','o','p'];
+      var actual = a.reverse();
+      expect(actual).to.eql(['p','o','t']);
+    });
+    it('配列自身を置き換えること', function(){
+      var a = ['t','o','p'];
+      a.reverse();
+      expect(a).to.eql(['p','o','t']);
     });
   });
 });  
