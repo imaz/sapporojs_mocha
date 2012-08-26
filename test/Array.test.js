@@ -70,4 +70,12 @@ describe('Array',function(){
       expect(actual).to.be.an('undefined'); //typeof 'undefined' するのでクール！
     });
   });
+  describe('#slice()', function(){
+    it('マイナスの値を指定した場合、lengthの値を足したindex以降の値を返すこと', function(){
+      var a = [1,2,3,4];
+      var actual = a.slice(-2);
+      // -2+4=2 なので [3,4] が返ってくる
+      expect(actual).to.eql([3,4]);
+    });
+  });
 });  
