@@ -78,4 +78,16 @@ describe('Array',function(){
       expect(actual).to.eql([3,4]);
     });
   });
+  describe('#sort()', function(){
+    it('数値配列は文字列として並べ替えが行われること', function(){
+      var a = [4,2,13,1];
+      var actual = a.sort();
+      expect(actual).to.eql([1,13,2,4]);
+    });
+    it('sortに渡した関数通りに並べ替えが行われること', function(){
+      var a = [4,2,13,1];
+      var actual = a.sort(function(a,b){ return a - b });
+      expect(actual).to.eql([1,2,4,13]);
+    });
+  });
 });  
